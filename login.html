@@ -30,14 +30,18 @@
 
     <section class="full-banner-form">
             <div class="container-login">
-                <form action="" class="form-login">
+                <form method="get" class="form-login">
                     <label for="login">
                         CPF*: 
-                        <input type="text" name="login" id="login" placeholder="Digite o CPF">
+                        <input type="text" name="login" required id="login" placeholder="Digite o CPF"
+                        oninvalid="this.setCustomValidity('preencha o campo CPF')"
+                        oninput="this.setCustomValidity('')">
                     </label>
                     <label for="password">
                         Senha*:
-                        <input type="password" name="password" id="password">
+                        <input type="password" name="password" id="password" placeholder="Digite a senha"
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                        title="A senha deve conter, ao menos uma letra minuscula, uma leta maiscula e pelo menos 8 caracteres" >
                     </label>
                     <button type="submit">continuar</button>
                     <p><a href="#">Esqueci minha senha</a></p>
@@ -52,6 +56,7 @@
     <script>
         const header = document.querySelector(".top-site")
         const button = document.querySelector(".top-button")
+        const body = document.querySelector("body");
         header.style.background = "none"
         button.classList.add("disabled")
 
@@ -65,6 +70,10 @@
                button.classList.remove("disabled");
             }
         })
+    </script>
+
+    <script type="text/javascript" src="assets/js/main.js">
+        
     </script>
 </body>
 </html>
