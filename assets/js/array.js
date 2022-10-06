@@ -24,10 +24,12 @@ veiculos.forEach((value,key)=>{
     carrosDOM.innerHTML += `<option value = "${key}"> ${value} </option>`
 })
 /////////////
-
+console.log("SLICE")
 const nbaTeams = ["Warriors", "Raptors", "Lakers", "Celtics", "Bucks", "76ers"]
 let nba = nbaTeams.slice(5,6)
-console.log(nba)
+nbaTeams.slice(1,2)
+console.log("nba == ", nba)
+console.log("nbateams == ", nbaTeams)
 /////////////
 
 const name = "Luiz Miguel Cardoso"
